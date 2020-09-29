@@ -15,7 +15,6 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->text('url');
             $table->text('path');
             $table->foreignId('film_id');
             $table->boolean('is_poster');
