@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('age');
+            $table->date('born_date');
             $table->foreignId('user_id')->unique();
             $table->timestamps();
         });

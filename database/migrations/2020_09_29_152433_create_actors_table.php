@@ -17,9 +17,8 @@ class CreateActorsTable extends Migration
             $table->id();
             $table->string('first_name')->index();
             $table->string('last_name')->index();
-            $table->integer('age');
+            $table->date('born_date');
             $table->integer('height');
-            $table->text('avatar_url');
             $table->text('avatar_path');
             $table->timestamps();
         });
