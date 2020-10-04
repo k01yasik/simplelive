@@ -30,21 +30,21 @@
         <link rel="preconnect" href="https://www.google-analytics.com">
         <link rel="preconnect" href="https://ajax.googleapis.com">
         <link rel="preconnect" href="https://mc.yandex.ru/">
-        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+        <link href="{{asset('scss/app.css')}}" rel="stylesheet">
     </head>
-    <body>
-        <header>
+    <body class="bg-gray-300 font-sans text-base text-gray-800">
+        <header class="h-12 bg-indigo-800 text-white">
+            <div class="container mx-auto flex flex-row flex-wrap justify-between items-center h-full">
+                <div class="py-1 px-8 bg-pink-500 text-white rounded-md">Hello, world!</div>
+                <div>How are you?</div>
+            </div>
         </header>
         <div class="main">
-            <div class="container">
-                <div class="row">
-                    <main class="col s12 m12 l9">
-                        @yield('content')
-                    </main>
-                    <aside class="col s12 m12 l3">
-                    </aside>
-                </div>
-            </div>
+            <main>
+                @yield('content')
+            </main>
+            <aside>
+            </aside>
         </div>
         <footer>
         </footer>
