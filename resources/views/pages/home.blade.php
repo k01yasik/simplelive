@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>hello, livewire!</div>
+    <livewire:counter>
 @endsection

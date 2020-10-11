@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="antialiased">
     <head>
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -24,6 +24,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" href="/favicon.ico">
         <link rel="manifest" href="/manifest.json">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -31,24 +32,30 @@
         <link rel="preconnect" href="https://ajax.googleapis.com">
         <link rel="preconnect" href="https://mc.yandex.ru/">
         <link href="{{asset('scss/app.css')}}" rel="stylesheet">
+        @livewireStyles
     </head>
-    <body class="bg-gray-300 font-sans text-base text-gray-800">
-        <header class="h-12 bg-indigo-800 text-white">
-            <div class="container mx-auto flex flex-row flex-wrap justify-between items-center h-full">
-                <div class="py-1 px-8 bg-pink-500 text-white rounded-md">Hello, world!</div>
-                <div>How are you?</div>
+    <body class="bg-gray-300 font-sans text-base text-gray-800 flex flex-col h-screen">
+        <header class="h-12 bg-sungolo flex-grow-0 flex flex-row">
+            <div class="w-2/12 bg-gray-800 flex flex-row">
+                <a href="/" class="h-12 w-12 flex flex-row justify-center items-center"><img src="/favicon-32x32.png"></a>
+                <div class="logo h-12 text-white flex flex-row items-center text-xl">Simple IMDB</div>
+            </div>
+            <div class="w-10/12 flex flex-row flex-wrap justify-between items-center h-full px-8">
+
             </div>
         </header>
-        <div class="main">
-            <main>
+        <main class="flex-grow bg-gray-300 h-full w-full flex flex-row overflow-y-auto">
+            <section class="bg-gray-800 px-8 w-2/12 overflow-y-auto">
+
+            </section>
+            <section class="bg-white p-8 w-10/12">
                 @yield('content')
-            </main>
-            <aside>
-            </aside>
-        </div>
-        <footer>
+            </section>
+        </main>
+        <footer class="h-12 flex-grow-0 bg-gray-800">
         </footer>
         @include('components.webfont')
+        @livewireScripts
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
