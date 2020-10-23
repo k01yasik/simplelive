@@ -31,6 +31,6 @@ class Film extends Model
 
     public function genres()
     {
-        return $this->belongsToMany('App\Models\Genres');
+        return $this->belongsToMany('App\Models\Genre');
     }
 }

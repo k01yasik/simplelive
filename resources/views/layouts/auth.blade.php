@@ -31,30 +31,17 @@
     </head>
     <body class="font-sans text-base text-gray-800 flex flex-col h-screen">
         <header class="h-12 bg-sungolo flex-grow-0 flex flex-row">
-            <div class="w-2/12 bg-gray-800 flex flex-row px-8 items-center">
-                <a href="/" class="h-8 w-8 flex flex-row justify-center items-center mr-2"><img src="favicon-32x32.png" /></a>
+            <div class="w-2/12 bg-sungolo flex flex-row">
+                <a href="/" class="h-12 w-12 flex flex-row justify-center items-center"><img src="favicon-32x32.png" /></a>
                 <div class="logo h-12 text-white flex flex-row items-center text-xl">Simple IMDB</div>
             </div>
             <div class="w-10/12 flex flex-row flex-wrap justify-end items-center h-full pl-8 pr-10">
-                @auth
-                    <livewire:profile-header />
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="h-8 px-8 bg-white text-sungolo rounded shadow">Logout</button>
-                    </form>
-                @endauth
-                @guest
-                    <a href="{{ route('login') }}" class="bg-white px-8 h-8 flex items-center rounded-l text-sungolo">Login</a>
-                    <a href="{{ route('register') }}" class="bg-butterfly-bush text-white px-8 h-8 flex items-center rounded-r">Registration</a>
-                @endguest
+                <a href="{{ route('login') }}" class="bg-white px-8 h-8 flex items-center rounded-l text-sungolo">Login</a>
+                <a href="{{ route('register') }}" class="bg-butterfly-bush text-white px-8 h-8 flex items-center rounded-r">Registration</a>
             </div>
         </header>
         <main class="flex-grow h-full w-full flex flex-row overflow-hidden">
-            <section class="bg-gray-800 p-8 w-2/12 overflow-y-auto">
-                <livewire:profile-left-panel />
-                @include('components.left-menu')
-            </section>
-            <section class="bg-white p-4 w-10/12 overflow-y-auto">
+            <section class="bg-white p-4 w-full overflow-y-auto flex flex-wrap justify-center items-center">
                 @yield('content')
             </section>
         </main>

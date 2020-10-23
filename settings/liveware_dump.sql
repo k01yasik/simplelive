@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 01 2020 г., 02:33
+-- Время создания: Окт 13 2020 г., 23:53
 -- Версия сервера: 5.7.19
 -- Версия PHP: 7.4.10
 
@@ -207,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 DROP TABLE IF EXISTS `films`;
 CREATE TABLE IF NOT EXISTS `films` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `slug` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `agerating` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -221,8 +222,8 @@ CREATE TABLE IF NOT EXISTS `films` (
 -- Дамп данных таблицы `films`
 --
 
-INSERT INTO `films` (`id`, `title`, `description`, `agerating`, `duration`, `created_at`, `updated_at`) VALUES
-(1, 'Inception', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', '12+', 148, '2020-09-29 18:00:00', '2020-09-29 18:00:00');
+INSERT INTO `films` (`id`, `slug`, `title`, `description`, `agerating`, `duration`, `created_at`, `updated_at`) VALUES
+(1, 'inception', 'Inception', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', '12+', 148, '2020-09-29 18:00:00', '2020-09-29 18:00:00');
 
 -- --------------------------------------------------------
 
@@ -317,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `migrations`
@@ -337,7 +338,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (39, '2020_09_29_153120_create_film_genre_table', 1),
 (40, '2020_09_29_161751_create_profiles_table', 1),
 (41, '2020_09_29_172449_create_country_film_table', 1),
-(42, '2020_09_29_173113_create_avatars_table', 1);
+(42, '2020_09_29_173113_create_avatars_table', 1),
+(44, '2020_10_13_202607_addcolumn', 2);
 
 -- --------------------------------------------------------
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <livewire:films-list />
+    <h1>Films by genre</h1>
 @endsection
