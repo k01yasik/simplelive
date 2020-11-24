@@ -46,4 +46,8 @@
             fill: theme('colors.gray.300')
         }
     }
+
+    [x-cloak] {
+        display: none;
+    }
 }
